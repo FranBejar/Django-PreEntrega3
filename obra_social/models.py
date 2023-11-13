@@ -6,6 +6,9 @@ class Hospital(models.Model):
     direccion=models.CharField(max_length=100)
     telefono=models.CharField(max_length=20)
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 class Afiliado(models.Model):
     nombre=models.CharField(max_length=100)
     apellido=models.CharField(max_length=100)
@@ -16,11 +19,17 @@ class Afiliado(models.Model):
     direccion=models.CharField(max_length=50)
     plan=models.IntegerField()
 
+    def __str__(self):
+        return f"{self.dni} - {self.apellido}"
+
 class Especialista(models.Model):
     nombre=models.CharField(max_length=100)
     apellido=models.CharField(max_length=100)
     especialidad=models.CharField(max_length=100)
     matricula=models.IntegerField()
+
+    def __str__(self):
+        return f"{self.matricula} - {self.apellido}"
 
 class Autorizacion(models.Model):
     dni_afiliado=models.CharField(max_length=10)
@@ -31,3 +40,6 @@ class Autorizacion(models.Model):
     observaciones=models.TextField(blank=True)
     fecha_solicitud=models.DateTimeField(auto_now_add=True)
     solicitud_aprobada=models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.dni_afiliado} - {self.intervencion} - {self.fecha_solicitud}"
