@@ -29,7 +29,7 @@ class Especialista(models.Model):
     matricula=models.IntegerField()
 
     def __str__(self):
-        return f"{self.matricula} - {self.apellido}"
+        return f"{self.especialidad} - {self.apellido}"
 
 class Autorizacion(models.Model):
     dni_afiliado=models.CharField(max_length=10)

@@ -44,3 +44,31 @@ nav {
 .block {
     margin-top: 50px;
 }
+
+.botonera-formularios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.botonera-formularios a {
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    font-size: 15pt;
+    font-weight: bold;
+    display: block;
+    padding: 13px 30px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.botonera-formularios a:hover {
+    background-color: greenyellow;
+    color: black;
+}
